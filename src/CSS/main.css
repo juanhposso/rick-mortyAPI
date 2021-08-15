@@ -31867,6 +31867,10 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+svg {
+  fill: rgb(51, 51, 51);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
