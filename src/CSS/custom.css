@@ -1,0 +1,24 @@
+svg {
+	fill: rgb(51, 51, 51);
+}
+.carousel {
+	scrollbar-width: none;
+}
+
+.carousel-item {
+	transition: 450ms all;
+	transform-origin: center left;
+}
+
+.carousel-item:hover ~ .carousel-item {
+	transform: translate3d(85px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+	opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+	transform: scale(1.35);
+	opacity: 1;
+}

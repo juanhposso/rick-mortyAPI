@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="src/CSS/main.css" />
+		<link rel="stylesheet" href="src/CSS/custom.css" />
 		<title>Rick and Morty | API</title>
 	</head>
 	<body class="h-screen">
@@ -39,6 +40,7 @@
 				items-center
 				text-black
 				font-bold
+				text-center
 			"
 		>
 			<h1 class="text-8xl z-10">Rick & Morty Characters</h1>
@@ -62,21 +64,19 @@
 			</div>
 		</section>
 		<main class="carousel w-full p-7 bg-gray-400 overflow-x-scroll relative">
-			<section
-				class="carousel-container bg-gray-700 my-8 pb-2 whitespace-nowrap"
-			>
+			<section class="carousel__container my-8 pb-2 whitespace-nowrap">
 				<div
 					class="
-						corusel-item
+						carousel-item
 						w-60
 						h-72
-						bg-gray-100
 						rounded-3xl
 						mr-2
 						cursor-pointer
 						inline-block
 						overflow-hidden
 						relative
+						bg-gray-100
 					"
 				></div>
 			</section>
