@@ -1,16 +1,19 @@
-const URL = 'https://rickandmortyapi.com/api/character';
+let arrayNumbers = []; // Agregamos los numeros sin repetir
 
-nombres(URL);
+// * Realiza las peticiones a la api pasa como parametro el array
+async function nombres(number) {
+	number.forEach(async (idCharacter) => {
+		const URL = `https://rickandmortyapi.com/api/character/${idCharacter}`;
 
-async function nombres(link) {
-	const info = await fetch(link);
-	const res = await info.json();
-	console.log(res.results[0].image);
-
-	const imgSrc = res.results[0].image;
-	createHTML(imgSrc);
+		const info = await fetch(URL);
+		const res = await info.json();
+		//console.log(res.image);
+		const imgSrc = res.image;
+		createHTML(imgSrc);
+	});
 }
 
+// * renderizar el HTML
 function createHTML(imgLink) {
 	const sectionElement = document.querySelector('.carousel__container');
 	const divElement = document.createElement('div');
@@ -32,3 +35,19 @@ function createHTML(imgLink) {
 
 	sectionElement.appendChild(divElement);
 }
+
+// * crear el numero unico sin repetir
+function randomNumber() {
+	for (let index = 0; index < 15; index++) {
+		const number = Math.floor(Math.random() * 671 + 1);
+		if (arrayNumbers.includes(number)) {
+			randomNumber();
+		} else {
+			//console.log(arrayNumbers);
+			arrayNumbers.push(number);
+		}
+	}
+	return nombres(arrayNumbers);
+}
+
+randomNumber();
