@@ -5,3 +5,26 @@
 svg {
 	fill: rgb(51, 51, 51);
 }
+
+.carousel-item {
+	transition: 450ms all;
+	transform-origin: center left;
+}
+
+.carousel-item:hover ~ .carousel-item {
+	transform: translate3d(125px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+	opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+	transform: scale(1.5);
+	opacity: 1;
+}
+
+.carousel-bg__img {
+	width: 100%;
+	object-fit: contain;
+}
