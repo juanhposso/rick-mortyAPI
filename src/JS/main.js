@@ -9,10 +9,11 @@ async function nombres(number) {
 	const imgSrc = res.image;
 	createHTML(imgSrc); */
 
+	const inicio = performance.now();
 	number.forEach(async (idCharacter) => {
 		//console.log(idCharacter);
 		const URL = `https://rickandmortyapi.com/api/character/${idCharacter}`;
-		console.log(URL);
+		//console.log(URL);
 		const info = await fetch(URL);
 		const res = await info.json();
 
@@ -27,11 +28,14 @@ async function nombres(number) {
 		} else {
 			const urlDimension = await fetch(urlLocation);
 			const dimensionResponse = await urlDimension.json();
-			console.log(dimensionResponse.dimension);
+			//console.log(dimensionResponse.dimension);
 
 			createHTML(image, name, dimensionResponse.dimension);
 		}
 	});
+
+	const fin = performance.now();
+	console.log('Tiempo de ejecucion estimado es: ', fin - inicio);
 }
 
 // * renderizar el HTML
